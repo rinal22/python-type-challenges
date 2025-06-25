@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Docker image
-        run: docker build -t mypy-check .
+        run: docker build -t image .
 
       - name: Run mypy
         run: docker run --rm image mypy .
