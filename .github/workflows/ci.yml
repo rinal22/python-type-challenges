@@ -1,4 +1,4 @@
-name: Check Types
+name: Check Types with Mypy
 
 on: [push, pull_request]
 
@@ -13,4 +13,4 @@ jobs:
         run: docker build -t mypy-check .
 
       - name: Run mypy
-        run: docker run --rm mypy-check
+        run: docker run --rm image mypy .
