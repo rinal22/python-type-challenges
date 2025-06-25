@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Docker image
-        run: docker build -t image .
+        run: docker build -t mypy-image .
 
       - name: Run mypy
-        run: docker run --rm -v "${{ github.workspace }}:/app" image poetry run mypy .
+        run: docker run --rm mypy-image mypy .
