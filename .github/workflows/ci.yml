@@ -1,0 +1,16 @@
+name: Check Types
+
+on: [push, pull_request]
+
+jobs:
+  mypy-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t mypy-check .
+
+      - name: Run mypy
+        run: docker run --rm mypy-check
