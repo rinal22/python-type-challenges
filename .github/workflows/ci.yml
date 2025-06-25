@@ -13,8 +13,4 @@ jobs:
         run: docker build -t image .
 
       - name: Run mypy
-        run: >
-          docker run --rm 
-          -v "${{ github.workspace }}:/app" 
-          mypy-check 
-          poetry run mypy .
+        run: docker run --rm -v "${{ github.workspace }}:/app" image poetry run mypy .
